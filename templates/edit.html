@@ -1,0 +1,13 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h3>Book Name: {{book.title}}</h3>
+    <h4>Current Rating: {{book.rating}}</h4>
+
+    <form action="{{ url_for('edit_rating',id=book.id)}}"  method="post">
+        <input type="text" id="ratting_cng" name="ratting_cng" required>
+        <button type="submit">Save Changes</button>
+
+    </form>
+
+{% endblock %}
